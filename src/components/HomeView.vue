@@ -50,7 +50,7 @@ const selectPokemon = async (pokemon) => {
 </script>
 
 <template>
-  <main class="relative overflow-hidden py-3">
+  <main class="relative py-3">
     <!-- Glow Background -->
     <div
       class="absolute -left-52 -top-72 h-[550px] w-[550px] rounded-full bg-violet-600/15 blur-[180px]"
@@ -77,7 +77,7 @@ const selectPokemon = async (pokemon) => {
 
         <!-- LISTA -->
         <section
-          class="overflow-visible rounded-[28px] border border-white/10 bg-white/5 shadow-[0_25px_70px_rgba(0,0,0,.35)] backdrop-blur-2xl"
+          class="overflow-visible rounded-[28px] border border-white/10 bg-white/5 shadow-[0_25px_70px_rgba(0,0,0,.35)] backdrop-blur-2xl pb-2"
         >
           <div class="p-6">
             <!-- HEADER -->
@@ -144,6 +144,7 @@ const selectPokemon = async (pokemon) => {
   max-height: 72vh;
   overflow-y: auto;
   overflow-x: hidden;
+  overscroll-behavior: contain;
   padding-right: 6px;
 
   scrollbar-width: thin;
