@@ -200,7 +200,7 @@ const selectPokemon = async (pokemon) => {
 
 @media (max-width: 400px) {
   .card-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 0.5rem;
   }
 }
