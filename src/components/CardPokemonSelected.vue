@@ -10,20 +10,21 @@ const pokemon = defineProps([
 
 <template>
   <aside
-    class="sticky top-8 overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,.45)]"
+    class="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,.45)]"
   >
+
     <!-- Glow -->
 
     <div
-      class="absolute left-1/2 top-32 h-64 w-64 -translate-x-1/2 rounded-full bg-violet-600/25 blur-[110px]"
+      class="absolute left-1/2 top-32 h-48 w-48 -translate-x-1/2 rounded-full bg-violet-600/25 blur-[110px]"
     ></div>
 
-    <div class="relative z-10 p-8">
+    <div class="relative z-10 p-6">
 
       <!-- Badge -->
 
       <div
-        class="mb-8 inline-flex rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[.25em] text-violet-300"
+        class="mb-6 inline-flex rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[.25em] text-violet-300"
       >
         Pokémon Selecionado
       </div>
@@ -31,7 +32,7 @@ const pokemon = defineProps([
       <!-- Imagem -->
 
       <div
-        class="flex h-[320px] items-center justify-center"
+        class="flex h-[240px] items-center justify-center"
       >
 
         <img
@@ -142,13 +143,13 @@ transform:translateY(0px);
 
 }
 
-@media(max-width:1280px){
+@media(min-width:1280px){
 
 aside{
 
-position:relative;
+position:sticky;
 
-top:0;
+top:8;
 
 }
 

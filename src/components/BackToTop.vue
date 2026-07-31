@@ -30,13 +30,13 @@ onUnmounted(() => {
       @click="scrollTop"
       class="
       fixed
-      bottom-8
-      right-8
+      bottom-4
+      right-4
       z-50
 
       flex
-      h-14
-      w-14
+      h-12
+      w-12
       items-center
       justify-center
 
@@ -60,6 +60,7 @@ onUnmounted(() => {
       hover:scale-105
       hover:border-violet-400
       hover:shadow-[0_20px_55px_rgba(124,92,255,.55)]
+      sm:bottom-8 sm:right-8 sm:h-14 sm:w-14
       "
     >
       <svg

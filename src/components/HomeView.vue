@@ -50,14 +50,14 @@ const selectPokemon = async (pokemon) => {
 </script>
 
 <template>
-  <main class="relative py-3">
+  <main class="relative overflow-x-hidden py-3">
     <!-- Glow Background -->
     <div
-      class="absolute -left-52 -top-72 h-[550px] w-[550px] rounded-full bg-violet-600/15 blur-[180px]"
+      class="absolute -left-20 -top-36 h-[300px] w-[300px] rounded-full bg-violet-600/15 blur-[180px] md:-left-52 md:-top-72 md:h-[550px] md:w-[550px]"
     ></div>
 
     <div
-      class="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[180px]"
+      class="absolute bottom-0 right-0 h-[300px] w-[300px] rounded-full bg-cyan-500/10 blur-[180px] md:h-[500px] md:w-[500px]"
     ></div>
 
     <div
@@ -121,9 +121,7 @@ const selectPokemon = async (pokemon) => {
             </div>
 
             <!-- GRID -->
-            <div
-              class="card-list pt-10 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(150px,1fr))]"
-            >
+            <div class="card-list pt-10 grid gap-5">
               <ListPokemons
                 v-for="pokemon in pokemonsFiltered"
                 :key="pokemon.name"
@@ -147,6 +145,8 @@ const selectPokemon = async (pokemon) => {
   overscroll-behavior: contain;
   padding-right: 6px;
 
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
   scrollbar-width: thin;
   scrollbar-color: rgba(124, 92, 255, 0.45) transparent;
 }
@@ -168,7 +168,23 @@ const selectPokemon = async (pokemon) => {
   background: rgba(124, 92, 255, 0.65);
 }
 
-@media (max-width: 1280px) {
+@media (min-width: 640px) {
+  .card-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-list {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    max-height: 72vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 6px;
+  }
+}
+
+@media (max-width: 1279px) {
   .card-list {
     max-height: none;
     padding-right: 0;
@@ -178,6 +194,14 @@ const selectPokemon = async (pokemon) => {
 @media (max-width: 768px) {
   .card-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
   }
 }
 </style>
