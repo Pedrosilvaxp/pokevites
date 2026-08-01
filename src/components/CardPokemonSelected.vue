@@ -39,7 +39,7 @@ const pokemon = defineProps([
           v-if="pokemon.name"
           :src="pokemon.img"
           :alt="pokemon.name"
-          class="h-60 w-auto drop-shadow-[0_25px_45px_rgba(124,92,255,.45)] transition-all duration-500 hover:scale-105"
+          class="h-60 w-auto drop-shadow-[0_25px_45px_rgba(124,92,255,.45)] transition-all duration-500 hover:scale-105 will-change-transform"
         />
 
         <img
@@ -118,6 +118,8 @@ const pokemon = defineProps([
 animation:float 3.8s ease-in-out infinite;
 
 filter:drop-shadow(0 0 45px rgba(124,92,255,.45));
+
+will-change:transform;
 
 }
 

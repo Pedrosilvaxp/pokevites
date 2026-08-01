@@ -15,6 +15,9 @@ const pokemon = defineProps([
       border-white/8
       bg-[#151A46]/85
       p-5
+      w-full
+      min-w-0
+      overflow-hidden
       transition-all
       duration-300
       hover:-translate-y-2
@@ -38,6 +41,7 @@ const pokemon = defineProps([
       <img
         :src="urlBaseSvg"
         :alt="pokemon.name"
+        loading="lazy"
         class="
           h-20
           w-auto

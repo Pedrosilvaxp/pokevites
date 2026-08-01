@@ -145,6 +145,8 @@ const selectPokemon = async (pokemon) => {
   overscroll-behavior: contain;
   padding-right: 6px;
 
+  contain: layout style paint;
+
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
   scrollbar-width: thin;
