@@ -47,7 +47,7 @@ onUnmounted(() => {
 
       bg-[#171B4B]/90
 
-      backdrop-blur-xl
+      sm:backdrop-blur-xl
 
       text-white
 

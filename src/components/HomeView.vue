@@ -77,7 +77,7 @@ const selectPokemon = async (pokemon) => {
 
         <!-- LISTA -->
         <section
-          class="overflow-visible rounded-[28px] border border-white/10 bg-white/5 shadow-[0_25px_70px_rgba(0,0,0,.35)] backdrop-blur-2xl pb-2"
+          class="overflow-visible rounded-[28px] border border-white/10 bg-white/5 shadow-[0_25px_70px_rgba(0,0,0,.35)] md:backdrop-blur-2xl pb-2"
         >
           <div class="p-6">
             <!-- HEADER -->
@@ -144,8 +144,6 @@ const selectPokemon = async (pokemon) => {
   overflow-x: hidden;
   overscroll-behavior: contain;
   padding-right: 6px;
-
-  contain: layout style paint;
 
   grid-template-columns: repeat(2, minmax(0, 1fr));
 

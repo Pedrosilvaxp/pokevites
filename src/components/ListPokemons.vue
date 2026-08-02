@@ -95,10 +95,10 @@ const pokemon = defineProps([
 
 <style scoped>
 
-article{
-
-backdrop-filter:blur(18px);
-
+@media (min-width: 1024px) {
+  article {
+    backdrop-filter: blur(18px);
+  }
 }
 
 </style>

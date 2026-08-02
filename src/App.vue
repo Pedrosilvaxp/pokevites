@@ -7,7 +7,7 @@ import BackToTop from "./components/BackToTop.vue";
 <template>
   <div
     class="
-      min-h-screen
+      min-h-dvh
       flex
       flex-col
       bg-[#0C0D38]
@@ -87,7 +87,7 @@ body,
   padding: 0;
 
   width: 100%;
-  min-height: 100%;
+  min-height: 100dvh;
 
   overflow-x: hidden;
 

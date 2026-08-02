@@ -151,7 +151,7 @@ aside{
 
 position:sticky;
 
-top:8;
+top:0.5rem;
 
 }
 
