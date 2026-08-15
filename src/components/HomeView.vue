@@ -138,72 +138,78 @@ const selectPokemon = async (pokemon) => {
 </template>
 
 <style scoped>
-.card-list {
-  max-height: 72vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  overscroll-behavior: contain;
-  padding-right: 6px;
-
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  scrollbar-width: thin;
-  scrollbar-color: rgba(124, 92, 255, 0.45) transparent;
-}
-
-.card-list::-webkit-scrollbar {
-  width: 8px;
-}
-
-.card-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.card-list::-webkit-scrollbar-thumb {
-  background: rgba(124, 92, 255, 0.35);
-  border-radius: 999px;
-}
-
-.card-list::-webkit-scrollbar-thumb:hover {
-  background: rgba(124, 92, 255, 0.65);
-}
-
-@media (min-width: 640px) {
   .card-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
 
-@media (min-width: 1024px) {
-  .card-list {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     max-height: 72vh;
     overflow-y: auto;
     overflow-x: hidden;
+    overscroll-behavior: contain;
     padding-right: 6px;
-  }
-}
 
-@media (max-width: 1279px) {
-  .card-list {
-    max-height: none;
-    padding-right: 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(124, 92, 255, 0.45) transparent;
   }
-}
 
-@media (max-width: 768px) {
-  .card-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
+  .card-list::-webkit-scrollbar {
+    width: 8px;
   }
-}
 
-@media (max-width: 400px) {
-  .card-list {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+  .card-list::-webkit-scrollbar-track {
+    background: transparent;
   }
-}
+
+  .card-list::-webkit-scrollbar-thumb {
+    background: rgba(124, 92, 255, 0.35);
+    border-radius: 999px;
+  }
+
+  .card-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(124, 92, 255, 0.65);
+  }
+
+  @media (min-width: 360px) {
+    .card-list {
+      grid-template-columns: repeat(2, minmax(150px, 1fr));
+    }
+  }
+
+  @media (min-width: 640px) {
+    .card-list {
+      grid-template-columns: repeat(3, minmax(150px, 1fr));
+    }
+  }
+
+  @media (min-width: 768px) {
+    .card-list {
+      grid-template-columns: repeat(3, minmax(160px, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .card-list {
+      grid-template-columns: repeat(4, minmax(160px, 1fr));
+      max-height: 72vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 6px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .card-list {
+      grid-template-columns: repeat(5, minmax(160px, 1fr));
+    }
+  }
+
+  @media (max-width: 359px) {
+    .card-list {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+  }
 </style>
 
 
