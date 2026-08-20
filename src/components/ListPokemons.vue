@@ -14,7 +14,8 @@ const pokemon = defineProps([
       border
       border-white/8
       bg-[#151A46]/85
-      p-5
+      p-4
+      sm:p-5
       w-full
       min-w-0
       overflow-hidden
@@ -45,6 +46,7 @@ const pokemon = defineProps([
         class="
           h-20
           w-auto
+          max-w-full
           transition-all
           duration-300
           group-hover:scale-110
@@ -56,16 +58,22 @@ const pokemon = defineProps([
 
     <!-- Nome -->
 
-    <div class="mt-5 text-center">
+    <div class="mt-5 w-full text-center">
 
       <h3
         class="
-          truncate
-          text-[15px]
+          w-full
+          min-w-0
+          max-w-full
+          text-center
           font-semibold
           capitalize
-          tracking-wide
           text-white
+          text-[15px]
+          sm:text-base
+          break-words
+          leading-snug
+          line-clamp-2
         "
       >
         {{ pokemon.name }}
@@ -83,6 +91,7 @@ const pokemon = defineProps([
           tracking-widest
           uppercase
           text-slate-400
+          max-w-full
         "
       >
         Pokémon

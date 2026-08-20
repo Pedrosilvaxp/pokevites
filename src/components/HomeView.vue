@@ -79,7 +79,7 @@ const selectPokemon = async (pokemon) => {
         <section
           class="overflow-visible rounded-[28px] border border-white/10 bg-white/5 shadow-[0_25px_70px_rgba(0,0,0,.35)] md:backdrop-blur-2xl pb-2"
         >
-          <div class="p-6">
+          <div class="p-4 md:p-6">
             <!-- HEADER -->
             <div
               class="mb-2 flex flex-col xl:flex-row xl:items-center xl:justify-between"
@@ -121,7 +121,7 @@ const selectPokemon = async (pokemon) => {
             </div>
 
             <!-- GRID -->
-            <div class="card-list pt-10 grid gap-5">
+            <div class="card-list pt-10 grid">
               <ListPokemons
                 v-for="pokemon in pokemonsFiltered"
                 :key="pokemon.name"
@@ -137,20 +137,16 @@ const selectPokemon = async (pokemon) => {
   </main>
 </template>
 
-<style scoped>
+  <style scoped>
   .card-list {
     display: grid;
     gap: 1.25rem;
     grid-template-columns: repeat(2, minmax(140px, 1fr));
 
-    max-height: 72vh;
-    overflow-y: auto;
+    max-height: none;
+    overflow-y: visible;
     overflow-x: hidden;
     overscroll-behavior: contain;
-    padding-right: 6px;
-
-    scrollbar-width: thin;
-    scrollbar-color: rgba(124, 92, 255, 0.45) transparent;
   }
 
   .card-list::-webkit-scrollbar {
@@ -170,7 +166,14 @@ const selectPokemon = async (pokemon) => {
     background: rgba(124, 92, 255, 0.65);
   }
 
-  @media (min-width: 360px) {
+  @media (max-width: 374px) {
+    .card-list {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+  }
+
+  @media (min-width: 400px) {
     .card-list {
       grid-template-columns: repeat(2, minmax(150px, 1fr));
     }
@@ -195,6 +198,8 @@ const selectPokemon = async (pokemon) => {
       overflow-y: auto;
       overflow-x: hidden;
       padding-right: 6px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(124, 92, 255, 0.45) transparent;
     }
   }
 
@@ -203,14 +208,7 @@ const selectPokemon = async (pokemon) => {
       grid-template-columns: repeat(5, minmax(160px, 1fr));
     }
   }
-
-  @media (max-width: 359px) {
-    .card-list {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
-  }
-</style>
+  </style>
 
 
 

@@ -28,20 +28,3 @@ h1 {
 .card {
   padding: 2em;
 }
-
-.card-list {
-  max-height: 75vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  /* Firefox */
-  scrollbar-width: none;
-
-  /* IE/Edge antigo */
-  -ms-overflow-style: none;
-}
-
-/* Chrome, Edge, Safari */
-.card-list::-webkit-scrollbar {
-  display: none;
-}
