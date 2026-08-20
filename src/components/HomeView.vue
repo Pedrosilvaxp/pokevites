@@ -121,14 +121,16 @@ const selectPokemon = async (pokemon) => {
             </div>
 
             <!-- GRID -->
-            <div class="card-list pt-10 grid">
-              <ListPokemons
-                v-for="pokemon in pokemonsFiltered"
-                :key="pokemon.name"
-                :name="pokemon.name"
-                :urlBaseSvg="urlBaseSvg + pokemon.url.split('/')[6] + '.svg'"
-                @click="selectPokemon(pokemon)"
-              />
+            <div class="card-list-wrapper mt-6">
+              <div class="card-list pt-10 grid">
+                <ListPokemons
+                  v-for="pokemon in pokemonsFiltered"
+                  :key="pokemon.name"
+                  :name="pokemon.name"
+                  :urlBaseSvg="urlBaseSvg + pokemon.url.split('/')[6] + '.svg'"
+                  @click="selectPokemon(pokemon)"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -138,15 +140,21 @@ const selectPokemon = async (pokemon) => {
 </template>
 
   <style scoped>
+  .card-list-wrapper {
+    max-height: 72vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    padding-right: 6px;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(124, 92, 255, 0.45) transparent;
+  }
+
   .card-list {
     display: grid;
     gap: 1.25rem;
     grid-template-columns: repeat(2, minmax(140px, 1fr));
-
-    max-height: none;
-    overflow-y: visible;
-    overflow-x: hidden;
-    overscroll-behavior: contain;
   }
 
   .card-list::-webkit-scrollbar {
@@ -194,12 +202,6 @@ const selectPokemon = async (pokemon) => {
   @media (min-width: 1024px) {
     .card-list {
       grid-template-columns: repeat(4, minmax(160px, 1fr));
-      max-height: 72vh;
-      overflow-y: auto;
-      overflow-x: hidden;
-      padding-right: 6px;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(124, 92, 255, 0.45) transparent;
     }
   }
 
